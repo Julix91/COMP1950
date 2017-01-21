@@ -1,0 +1,158 @@
+/*
+.hi-icon:after {
+    top: -0.438em;
+    left: -0.438em;
+    padding: 0.438em;
+    box-shadow: 0 0 0 0.25em #fff;
+    -webkit-transition: -webkit-transform .2s,opacity .2s;
+    -webkit-transform: scale(.8);
+    -moz-transition: -moz-transform .2s,opacity .2s;
+    -moz-transform: scale(.8);
+    -ms-transform: scale(.8);
+    transition: transform .2s,opacity .2s;
+    transform: scale(.8);
+    opacity: 0
+}
+
+.hi-icon:hover {
+    background: #fff;
+}
+
+.hi-icon:hover:after {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1
+}
+
+
+.hi-icon a,.hi-icon:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hi-icon a {
+    display: block;
+    top: 0;
+    z-index: 100;
+}
+
+.hi-icon-wrap {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1.5em
+}
+
+.hi-icon:after {
+    pointer-events: none;
+    border-radius: 50%;
+    content: '';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+.hi-icon:before {
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased
+}
+
+.hi-icon-effect-1 .hi-icon {
+    background: rgba(255,255,255,.1);
+    -webkit-transition: background .2s,color .2s;
+    -moz-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+}
+/*
+
+/*Custom version of Font Awesome using icomoon*/
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?7ik5t7');
+  src:  url('fonts/icomoon.eot?7ik5t7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7ik5t7') format('truetype'),
+    url('fonts/icomoon.woff?7ik5t7') format('woff'),
+    url('fonts/icomoon.svg?7ik5t7#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-accessibility:before {
+  content: "\e900";
+}
+.icon-code:before {
+  content: "\e901";
+}
+.icon-comments:before {
+  content: "\e902";
+}
+.icon-copyright:before {
+  content: "\e903";
+}
+.icon-css3:before {
+  content: "\e904";
+}
+.icon-envelope:before {
+  content: "\e905";
+}
+.icon-facebook:before {
+  content: "\e906";
+}
+.icon-free-code-camp:before {
+  content: "\e907";
+}
+.icon-github-alt:before {
+  content: "\e908";
+}
+.icon-html5:before {
+  content: "\e909";
+}
+.icon-linkedin:before {
+  content: "\e90a";
+}
+.icon-man:before {
+  content: "\e90b";
+}
+.icon-phone:before {
+  content: "\e90c";
+}
+.icon-quote-left:before {
+  content: "\e90d";
+}
+.icon-quote-right:before {
+  content: "\e90e";
+}
+.icon-rocket:before {
+  content: "\e90f";
+}
+.icon-skype:before {
+  content: "\e910";
+}
+.icon-terminal:before {
+  content: "\e911";
+}
+.icon-wpexplorer:before {
+  content: "\e912";
+}

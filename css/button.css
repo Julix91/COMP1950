@@ -1,0 +1,290 @@
+/*modified from http://cssdeck.com/labs/the-incredible-brushed-metal-electric-button by James Kyle (sameAs https://twitter.com/thejameskyle )
+*/
+
+body {
+    background: #1D2329;
+}
+
+
+.metal-button, .metal-button:before, .metal-button:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 2.1875em;
+}
+
+.button-controls{
+	position: relative;
+	z-index: 0;
+	left: 0.5em;
+	margin: 0 auto;
+}
+
+@media only screen and (min-width: 36em){
+	.button-controls{
+		margin: 0 0;
+	}
+}
+.metal-button span {
+	font-size: 2em;
+}
+.metal-button span a {
+	text-decoration: none;
+	color: inherit;
+}
+.metal-button span a:active {
+	color: #fff;
+}
+
+
+button.metal-button:focus {	outline:0; }
+.metal-button {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	display: block;
+	float: left;
+
+    font-size: 0.6em;
+    line-height: 2.5em;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    text-shadow: rgba(0,0,0,0.1) 0em -0.125em 0.0625em, rgb(255,255,255) 0em 0.0625em 0.125em;
+
+    width: 3.75em;
+    height: 3.75em;
+    padding: 0.625em;
+    margin: 0 0.625em;
+    position: static;
+    z-index: 50;
+    cursor: pointer;
+
+    background-color: transparent;
+    border: rgba(0,0,0,0.3) 0.0625em solid;
+    border-top-color: rgba(0,0,0,0.1);
+    border-left-color: rgba(0,0,0,0.2);
+    border-right-color: rgba(0,0,0,0.2);
+    border-bottom-color: rgba(0,0,0,0.3);
+    box-shadow: inset rgba(255,255,255,0.3) -0.3125em -1.875em 0.625em,
+                inset rgba(255,255,255,0.3) 0em 1.875em 0.625em,
+                inset rgba(255,255,255,1) 0em 0.125em 0.0625em,
+                rgba(0,0,0,0.4) 0em 0.625em 0.9375em;
+    -webkit-transition: -webkit-box-shadow 0s ease-in-out;
+     -khtml-transition:  -khtml-box-shadow 0s ease-in-out;
+       -moz-transition:    -moz-box-shadow 0s ease-in-out;
+         -o-transition:      -o-box-shadow 0s ease-in-out;
+            transition:         box-shadow 0s ease-in-out;
+
+    background-image:   -webkit-radial-gradient(  50%   0%,  8% 50%, hsla(0,0%,100%,.2) 0%, hsla(0,0%,100%,0) 100%),
+                        -webkit-radial-gradient(  50% 100%, 12% 50%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 100%),
+                        -webkit-radial-gradient(   0%  50%, 50%  7%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 100%),
+                        -webkit-radial-gradient( 100%  50%, 50%  5%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 100%),
+
+                        -webkit-repeating-radial-gradient(  50% 50%, 100% 100%, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   3%, hsla(0,0%,  0%,.1) 3.5%),
+                        -webkit-repeating-radial-gradient(  50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%,.1) 7.5%),
+                        -webkit-repeating-radial-gradient(  50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,0) 2.2%);
+
+}
+
+.metal-button:before, .metal-button:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.metal-button:before {
+    z-index: -50;
+    width: 3.75em;
+    height: 4em;
+
+    margin-top: -0.9375em;
+    margin-left: -0.6875em;
+
+    background: #666666;
+    background: -moz-linear-gradient(left, #666666 0%, #bbbbbb 50%, #666666 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#666666), color-stop(50%,#bbbbbb), color-stop(100%,#666666));
+    background: -webkit-linear-gradient(left, #666666 0%,#bbbbbb 50%,#666666 100%);
+    background: -o-linear-gradient(left, #666666 0%,#bbbbbb 50%,#666666 100%);
+    background: -ms-linear-gradient(left, #666666 0%,#bbbbbb 50%,#666666 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#666666',GradientType=1 );
+    background: linear-gradient(left, #666666 0%,#bbbbbb 50%,#666666 100%);
+
+    box-shadow: #000 0em 0em 0.125em;
+}
+.metal-button:after {
+    z-index: -100;
+    width: 4.375em;
+    height: 4.375em;
+    margin-top: -4em;
+    margin-left: -1em;
+    background: rgba(0,0,0,0.1);
+
+    box-shadow: inset rgba(255,255,255,0.1) 0em -0.3125em 0.3125em,
+                rgba(0,0,0,0.1) 0em 0.1875em 0.1875em,
+                rgba(255,255,255,0.05) 0em -0.1875em 0.1875em;
+}
+.metal-button:hover {
+    color: rgba(0,0,0,0.6);
+    text-shadow: rgb(255,255,255) 0em 0em 0.1875em;
+    box-shadow: inset rgba(255,255,255,0.4) 0em -1.875em 0.9375em,
+                inset rgba(255,255,255,0.2) -1.5625em 1.5625em 0.625em,
+                inset rgba(255,255,255,1) 0em 0.125em 0.0625em,
+                rgba(0,0,0,0.4) 0em 0.625em 0.9375em;
+}
+.metal-button:active {
+    margin-top: -0.25em;
+    color: #fff;
+    box-shadow: inset rgba(255,255,255,0.4) 0em -1.875em 0.9375em,
+                inset rgba(255,255,255,0.2) -1.5625em 1.5625em 0.625em,
+                inset rgba(255,255,255,1) 0em 0.125em 0.0625em,
+                rgba(0,0,0,0.4) 0em 0.125em 0.1875em;
+}
+.metal-button:active:before {
+    height: 3.75em;
+    margin-top: -0.6875em;
+}
+.metal-button:active:after {
+    margin-top: -3.75em;
+}
+
+
+/*
+* modified from "CSS power button" - a PEN by Hugo Giraudel https://codepen.io/HugoGiraudel/pen/nLljB
+*/
+
+@import "compass/css3";
+
+#power-button {
+	position: relative;
+	display: block;
+	float: right;
+	top: -0.35em;
+	right: 1.5em;
+	-webkit-transform:scale(0.35);
+	-moz-transform:scale(0.35);
+	-ms-transform:scale(0.35);
+	transform:scale(0.35);
+	margin: -3em;
+}
+
+.power-button-outer {
+  box-sizing: border-box;
+  width: 9.375em;
+  height: 9.375em;
+  margin: 1em auto;
+  border-radius: 50%;
+  background: #b25244;
+  background: linear-gradient(#b25244, #5e1912);
+  position: relative;
+  cursor: pointer;
+  padding: 1.25em;
+  box-shadow:
+    inset 0 0.125em 0.188em rgba(255,255,255,0.13),
+    0 0.313em 0.5em rgba(0,0,0,0.5),
+    0 0.625em 0.625em 0.25em rgba(0,0,0,0.3);
+}
+
+.power-button-outer:focus {outline:0;}
+
+.power-button-outer:after {
+  content: "";
+  position: absolute;
+  left: -1.25em;
+  right: -1.25em;
+  top: -1.25em;
+  bottom: -1.25em;
+  z-index: -2;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0.063em 0 rgba(255,255,255,0.1),
+    0 0.063em 0.125em rgba(0,0,0,0.3),
+    0 0 0.625em rgba(0,0,0,0.15);
+
+}
+
+.power-button-outer:before {
+  content: "";
+  position: absolute;
+  left: -0.625em;
+  right: -0.625em;
+  top: -0.625em;
+  bottom: -0.625em;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: inset 0 0.625em 0.625em rgba(0,0,0,0.13);
+  -webkit-filter:blur(0.063em);
+  filter: blur(0.063em);
+}
+
+.power-button-outer:active {
+  box-shadow:
+    inset 0 0.125em 0.188em rgba(255,255,255,0.13),
+    0 0.313em 0.5em rgba(0,0,0,0.5),
+    0 0.188em 0.625em 0.25em rgba(0,0,0,0.3);
+}
+
+.power-button-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(#8a2c20, #9e4235);
+  display: block;
+  box-shadow:
+    0 -0.125em 0.313em rgba(255,255,255,0.05),
+    0 0.125em 0.313em rgba(255,255,255,0.1);
+}
+
+.power-button-inner:after {
+  position: absolute;
+  width: 3.125em;
+  height: 3.125em;
+  background: white;
+  background: linear-gradient(#eaeceb, #8d8d8d);
+  left: 50%;
+  top: 50%;
+  content: "";
+  border-radius: inherit;
+  margin: -1.563em 0 0 -1.563em;
+  box-shadow: 0 0.188em 0.313em rgba(0,0,0,0.3);
+}
+
+.power-button-inner:before {
+  position: absolute;
+  content: "";
+  width: 2.5em;
+  height: 2.5em;
+  left: 50%;
+  top: 50%;
+  border-radius: inherit;
+  background: inherit;
+  margin: -1.25em 0 0 -1.25em;
+  z-index: 2;
+  box-shadow: inset 0 0.188em 0.313em rgba(0,0,0,0.3), 0 0.063em 0.125em rgba(255,255,255,1);
+}
+
+.power-button-inner span {
+ 	display: block;
+  width: 1.25em;
+  height: 1.25em;
+  background: #8f3327;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.625em;
+  top: 1.563em;
+  z-index: 3;
+  position: relative;
+}
+
+.power-button-inner span:before {
+  content: "";
+  position: absolute;
+  width: 0.375em;
+  height: 1.563em;
+  background: linear-gradient(#fff, #cbcbcd);
+  border-radius: 0.625em;
+  box-shadow: 0 0.188em 0.313em rgba(0,0,0,0.3);
+  left: 50%;
+  margin-left: -0.188em;
+}

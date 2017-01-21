@@ -1,0 +1,497 @@
+/*For people that don't navigate using CTRL+F -- twinkling stars starts below, and affects body too.
+* Computer/terminal stuff about line 45
+*More of my stuff around line 200
+*Responsive stuff around 350
+*Lightsaber-skillbar around 400
+*Seriously though, use the dev tools to inspect anything you want to know more about, it'll give you the line #.
+*/
+
+/* TWINKLING STARS modified from https://www.script-tutorials.com/night-sky-with-twinkling-stars/
+*by Hans Julian Sloman - http://www.julix.ca */
+/* Julian: it now uses pseudo selectors to avoid conaminating the html with non-semantic tags.*/
+
+body, html, body::before{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+body::before {
+	content: "";
+	position: absolute;
+}
+
+/*stars*/
+body {
+	position: absolute;
+	background:#000 url(../img/stars.png) repeat top center !important;
+}
+
+/*twinkle*/
+body::before{
+	pointer-events: none;
+	background:transparent url(../img/twinkling.png) repeat top center;
+	-webkit-animation:move-twink-back 390s linear infinite;
+	animation:move-twink-back 390s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+
+/* TERMINAL / COMPUTER  from https://codepen.io/deluxive/pen/lxEGs
+*by Hans Julian Sloman - http://www.julix.ca */
+
+#computer {
+	width: 100%;
+	position: relative;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAAD0ElEQVR4Ae3WsQ2AMBDFUCAZAFGw/6KREDvE3bsBXFiW7p/38x6Ogd0Grt1APAZ+A8LSQWJAWIlW0DnGYIGB7QbmWms7FJABr1ADiQFhJVpBhaWBxIDxnmgFNd41kBjwChOtoMLSQGJAWIlWUONdA4kB4z3RCuoVaiAxIKxEK6iwNJAYMN4TraDGuwYSA15hohVUWBpIDAgr0QpqvGsgMWC8J1pBvUINJAaElWgFFZYGEgPGe6IV1HjXQGLAK0y0ggpLA4kBYSVaQY13DSQGjPdEK6hXqIHEgLASraDC0kBiwHhPtIIa7xpIDHiFiVZQYWkgMSCsRCuo8a6BxIDxnmgF9Qo1kBgQVqIVVFgaSAwY74lWUONdA4kBrzDRCiosDSQGhJVoBTXeNZAYMN4TraBeoQYSA8JKtIIKSwOJAeM90QpqvGsgMeAVJlpBhaWBxICwEq2gxrsGEgPGe6IV1CvUQGJAWIlWUGFpIDFgvCdaQY13DSQGvMJEK6iwNJAYEFaiFdR410BiwHhPtIJ6hRpIDAgr0QoqLA0kBoz3RCuo8a6BxIBXmGgFFZYGEgPCSrSCGu8aSAwY74lWUK9QA4kBYSVaQYWlgcSA8Z5oBTXeNZAY8AoTraDC0kBiQFiJVlDjXQOJAeM90QrqFWogMSCsRCuosDSQGDDeE62gxrsGEgNeYaIVVFgaSAwIK9EKarxrIDFgvCdaQb1CDSQGhJVoBRWWBhIDxnuiFdR410BiwCtMtIIKSwOJAWElWkGNdw0kBoz3RCuoV6iBxICwEq2gwtJAYsB4T7SCGu8aSAx4hYlWUGFpIDEgrEQrqPGugcSA8Z5oBfUKNZAYEFaiFVRYGkgMGO+JVlDjXQOJAa8w0QoqLA0kBoSVaAU13jWQGDDeE62gXqEGEgPCSrSCCksDiQHjPdEKarxrIDHgFSZaQYWlgcSAsBKtoMa7BhIDxnuiFdQr1EBiQFiJVlBhaSAxYLwnWkGNdw0kBrzCRCuosDSQGBBWohXUeNdAYsB4T7SCeoUaSAwIK9EKKiwNJAaM90QrqPGugcSAV5hoBRWWBhIDwkq0ghrvGkgMGO+JVlCvUAOJAWElWkGFpYHEgPGeaAU13jWQGPAKE62gwtJAYkBYiVZQ410DiQHjPdEK6hVqIDEgrEQrqLA0kBgw3hOtoMa7BhIDXmGiFVRYGkgMCCvRCmq8ayAxYLwnWkG9Qg0kBoSVaAUVlgYSA8Z7ohXUeNdAYsArTLSCCksDiQFhJVpBjXcNJAaM90QrqFeogcSAsBKtoMLSQGLAeE+0gn6NXXdvK2/RcgAAAABJRU5ErkJggg==);
+	/*Noise*/
+	border-radius: 1.25em;
+	padding: 0.625em 0.063em 3.125em;
+	text-align: left;
+}
+
+#computer section {
+	min-height: 30%;
+	padding: 1.5em;
+	border-radius: 2.75em;
+	-webkit-filter: blur(0.0.188em);
+	border-left: 0.8em solid #1b1b1b;
+	border-right: 0.8em solid #1c1c1c;
+	border-top: 1em solid #0f1310;
+	border-bottom: 1em solid #0f1310;
+	overflow:hidden;
+	position: relative;
+	color: #7cb4fc;
+	/*padding: 1.5em;*/
+	box-shadow: inset 0 0 0 0.563em rgba(21, 21, 20, 0.6), 0 0.063em 3.75em 0.625em rgba(40, 46, 40, 9), inset 0 0.063em 5em 0.313em rgba(0, 0, 0, 0.97);
+	background-color: #162030;
+	text-shadow: #89d3fd 0 -0.063em 2.188em;
+}
+#computer section::before {
+	pointer-events: none;
+	content: "";
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(124, 180, 252, 0.2)), color-stop(5%, rgba(124, 180, 252, 0.075)), color-stop(99%, rgba(25, 40, 66, 0.05)));
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(40, 66, 25, 0.2)), color-stop(70%, rgba(32, 57, 17, 0)), color-stop(99%, rgba(28, 53, 13, 0)));*/
+	-webkit-animation: scan 6.5s 1.0s infinite ease-in-out forwards;
+	animation: scan 6.5s 1.0s infinite ease-in-out forwards;
+}
+#computer section::after {
+	pointer-events: none;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAE0lEQVQIHWP4//8/AxMDFMiDWQA2wAMhzy0v7QAAAABJRU5ErkJggg==);
+	-webkit-filter: hue-rotate(180deg); filter: hue-rotate(180deg);
+	/*scanline*/
+
+	repeat;
+	-webkit-filter: drop-shadow(15.2em 2.1.125em 7.2.188em rgba(20, 184, 189, 1));
+}
+
+#computer section div {
+	border: 0.063em solid #DDD;
+	box-shadow: none;
+	background-color: transparent;
+	border-style: none;
+	font: 400 1.2em VT323, monospace;
+	min-height: 12em;
+}
+#computer section img {
+	pointer-events: none;
+	opacity: 0.1;
+	filter: alpha(opacity=10);
+	/* For IE8 and earlier */
+	-webkit-filter: blur(0.063em);
+	/* Safari 6.0 - 9.0 */
+	filter: blur(0.063em);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/*computer color*/
+
+#computer nav li {
+  display: inline;
+  padding-right: 0.5em;
+}
+#computer ul, h2, h3, p{
+	padding: 0;
+	margin: 0;
+	font-size: 1.1em;
+}
+#computer ul {
+	margin: 0.5em;
+}
+#computer h2, #computer h3 {
+	margin: 0.25em 0.1em;
+	font-size: 1.3em;
+}
+
+
+#computer section div:last-child::after {
+	content: "\220E";
+	-webkit-animation: cursor .95s ease-in-out infinite;
+	animation: cursor .95s ease-in-out infinite;
+	font-size: 120%;
+}
+/*Animations*/
+/* Cant' get "Scan" to work in Firefox*/
+
+@-webkit-keyframes scan {
+	from {
+		top: -50%;
+		left: 0;
+	}
+	to {
+		top: 150%;
+		left: 0;
+	}
+}
+@keyframes scan {
+	from {
+		top: -50%;
+		left: 0;
+	}
+	to {
+		top: 150%;
+		left: 0;
+	}
+}
+@-webkit-keyframes cursor {
+	from {
+		opacity: 1.0;
+	}
+	to {
+		opacity: 0.0;
+	}
+}
+@keyframes cursor {
+	from {
+		opacity: 1.0;
+	}
+	to {
+		opacity: 0.0;
+	}
+}
+
+
+
+/*More local css and modifications / over-writes*/
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+body > header, body > footer {
+	position: relative;
+	width: 100%;
+	background: #0b1013;
+}
+body > footer{
+	color: #bad8ff;
+	margin-top: auto;
+	background: #0b1013 url(../img/strip-inactive.png) repeat-x 0 -50px;
+	text-align: center;
+	padding-top: 0.8em;
+}
+
+body > footer p {
+	display: inline-block;
+	padding:0;
+}
+
+header > h1 {
+	background: #0b1013 url(../img/strip-inactive.png) repeat-x;
+	margin: 0;
+	font-size: 2.1em;
+	font-family: monospace;
+	color: #bad8ff;
+	/*margin-left: 3em;*/
+	text-align: center;
+}
+
+.wrapper {
+	color: #7cb4fc;
+	font-family: monospace;
+	/*
+	height: calc(100% - 50px);
+	width: 100%;
+	*/
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+nav a {
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav.site-nav {
+	box-sizing: border-box;
+	position: relative;
+	width: 96%;
+	text-align: center;
+	right: -0.5em;
+	top: 1em;
+}
+nav.site-nav ul, nav.site-nav ol { list-style: none; padding-left: 0; margin-top: 0; }
+nav.site-nav ul li {
+	background: transparent url(../img/strip-inactive.png) repeat-x 0 -36px;
+	border-radius: 5px;
+	border: 1px solid transparent;
+}
+nav.site-nav > ul > li > a {
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	width: 100%;
+}
+nav.site-nav ul li:hover {
+	background: transparent url(../img/strip-active.png) repeat-x 0 -36px
+}
+
+
+/*Animation inspired by Stack Overflow Demo: animate html5 details
+A PEN BY Rachael L Moore http://codepen.io/morewry/pen/gbJvy - specifically .details3*/
+details {
+	-webkit-transition: height 0.3s ease;
+	transition: height 0.3s ease;
+	cursor: pointer;
+}
+details[open] { height: 14em; }
+
+
+li#homeworks summary {
+	display: block;
+	padding: 0.5em 0em;
+}
+
+li#homeworks ol {
+	list-style: circle;
+	text-align: center;
+	list-style-position: inside;
+}
+
+/*A bit of a hack. Does cause one li of */
+.close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 100%
+}
+.close > a {
+	padding: 6.5px;
+	width: 100%;
+	display: inline-block;
+}
+
+
+/*Tried to get glitch https://css-tricks.com/glitch-effect-text-images-svg/ to work, but failed*/
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	color: #bad8ff;
+}
+
+a.story-link {
+	display: block;
+	text-align: center;
+	margin-top: 0.3em;
+	color: #8db0dd;
+}
+
+/*Toggles without jQuery/JS*/
+
+.target {
+	display: none;
+}
+.target:target {
+	display: block;
+}
+
+#computer .target {
+	visibility: hidden;
+}
+#computer .target:target {
+	visibility: visible;
+}
+
+
+
+/*RESPONSIVE: mobile first, i.e. default is mobile, and changes stuff for larger screens*/
+
+@media only screen and (min-width: 40.5em) {
+	/*double spaced for emphasis that in media rule*/
+		.wrapper {
+			width: calc(30em + 40%);
+			margin-top: 12vh;
+			-ms-flex-flow: row nowrap;
+				flex-flow: row nowrap;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
+			/*
+			width: auto;
+			top: 15%;
+			height: 85%;
+			left: 50%;
+			margin-left: calc(-890px/2);
+			position: absolute;
+			text-align: center;
+			width: 960px;
+			*/
+
+		}
+
+		#computer{
+
+			padding: 1.625em 1.563em 3.125em;
+		}
+
+		#computer section {
+			/*padding: 2.5em 2em 1.5em 4em;*/
+		}
+
+		#computer section img {
+			pointer-events: none;
+			opacity: 0.3;
+			filter: alpha(opacity=30);
+			position: relative;
+			float: right;
+			margin: -2.5em -1em 0 -0.5em;
+		}
+
+		nav.site-nav {
+			width: 12em;
+			text-align: left;
+		}
+
+		body > footer p {
+			margin: 0.8em;
+		}
+	/*double spaced for clarity*/
+}/*media end*/
+
+
+
+/*Skills */
+ul.skill-list > li meter {
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+#creativity {
+	width: calc(99% - 30px);
+}
+.skillmeasure::before{
+	content: "";
+	display: inline-block;
+	background-image: url("../img/handle2.png");
+	background-size: contain;
+	width: 90px;
+	height: 12px;
+	background-repeat: no-repeat;
+	position: relative;
+	left: -80px;
+	top: -6px;
+}
+.skillmeasure{
+	display: block;
+	border-radius: 0.25em;
+	height: 0.4em;
+	/*position: relative;
+	top: calc(50% - 0.25em);
+	left: 0.5em;*/
+	width: calc(100% - 120px);
+	max-width: 280px;
+	margin: 0.5em 0 0.8em 85px;
+	/*filter: blur(1px);
+	-moz-filter: blur(1px);
+	-webkit-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);*/
+	/* background-color: #33ccff was #87b487*/;
+	background: rgb(55,132,214); /* Old browsers */
+	background: -webkit-linear-gradient(top, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 60%,rgba(55,132,214,1) 100%);
+	background: linear-gradient(to bottom, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 60%,rgba(55,132,214,1) 100%); /* W3C */ /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,rgba(55,132,214,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(55,132,214,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 60%,rgba(55,132,214,1) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
+	background: -ms-linear-gradient(bottom, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 50%,rgba(254,254,254,1) 60%,rgba(55,132,214,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3784d6', endColorstr='#3784d6',GradientType=1 ); /* IE6-9 */
+
+	box-shadow: 0px 0px 1.5em 0.1em rgba(0, 198, 255, 0.7);
+/*background-image: url("./css/images/lego_dot.jpg");
+	background-size: auto 100% ;*/
+	-webkit-animation: skillbar 1.5s, glow 2.5s infinite;
+			animation: skillbar 1.5s, glow 2.5s infinite;
+}
+@-webkit-keyframes skillbar {
+	0%   {background-color: #3d3d3d; /*box-shadow: none*/; width: 0%}
+}
+@keyframes skillbar {
+	0%   {background-color: #3d3d3d; /*box-shadow: none*/; width: 0%}
+}
+
+@-webkit-keyframes glow {
+	from { box-shadow: 0px 0px 1.2em 0.1em rgba(0, 198, 255, 0.6); }
+	50% { box-shadow: 0px 0px 1.6em 0.1em rgba(0, 198, 255, 0.8); }
+	to { box-shadow: 0px 0px 1.2em 0.1em rgba(0, 198, 255, 0.6); }
+}
+
+@keyframes glow {
+	from { box-shadow: 0px 0px 1.2em 0.1em rgba(0, 198, 255, 0.6); }
+	50% { box-shadow: 0px 0px 1.6em 0.1em rgba(0, 198, 255, 0.8); }
+	to { box-shadow: 0px 0px 1.2em 0.1em rgba(0, 198, 255, 0.6); }
+}
